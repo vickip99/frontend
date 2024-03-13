@@ -3,7 +3,7 @@ export type Bowler = {
   bowlerLastName: string;
   bowlerFirstName: string;
   bowlerMiddleInit: string;
-  bolwerAddress: string;
+  bowlerAddress: string;
   bowlerCity: string;
   bowlerState: string;
   bowlerZip: string;
