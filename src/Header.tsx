@@ -8,6 +8,10 @@ function Header(props: any) {
       </div>
       <div className="col subtitle">
         <h1 className="text-white">{props.title}</h1>
+        <br />
+        <h4 className="text-center text-white">
+          Here's some information about the amazing bowlers in our database!
+        </h4>
       </div>
     </header>
   );

@@ -15,14 +15,7 @@ function BowlersList() {
 
   return (
     <>
-      <br></br>
-      <div className="row">
-        <h4 className="text-center">
-          Here's all the information for the Bowlers in our Database
-        </h4>
-        <br></br>
-        <br></br>
-      </div>
+      <div className="row"></div>
       <table className="table table-bordered">
         <thead>
           <tr>
