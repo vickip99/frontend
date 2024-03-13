@@ -1,14 +1,17 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Bowler } from "../types/Bowler";
+
 function BowlersList() {
   const [bowlerData, setBowlerData] = useState<Bowler[]>([]);
-  const fetchBowlerData = asyn () => {
-    const rsp = await fetch('http://localhost:5081/api/Bowling')
-    const f = await rsp.json(); 
-    setBowlerData(f);
-;  }
 
-fetchBowlerData();
+  useEffect(() => {
+    const fetchBowlerData = async () => {
+      const rsp = await fetch("http://localhost:5081/api/Bowling");
+      const f = await rsp.json();
+      setBowlerData(f);
+    };
+    fetchBowlerData();
+  }, []);
 
   return (
     <>
@@ -31,6 +34,7 @@ fetchBowlerData();
             <th>BowlerState</th>
             <th>BowlerZip</th>
             <th>BowlerPhoneNumber</th>
+            <th>TeamName</th>
           </tr>
         </thead>
         <tbody>
@@ -44,6 +48,7 @@ fetchBowlerData();
               <td>{f.bowlerState}</td>
               <td>{f.bowlerZip}</td>
               <td>{f.bowlerPhoneNumber}</td>
+              <td>{f.teamName}</td>
             </tr>
           ))}
         </tbody>
